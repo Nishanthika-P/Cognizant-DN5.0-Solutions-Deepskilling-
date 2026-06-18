@@ -5,9 +5,9 @@
 -- =============================================================
 
 
--- =============================================================
+-- ============================================================
 -- TASK 1: BASELINE PERFORMANCE — NO INDEXES
--- =============================================================
+-- ============================================================
 
 -- 48: Run EXPLAIN on the multi-table join query BEFORE adding any indexes.
 -- This captures the baseline query plan to compare against after optimization.
