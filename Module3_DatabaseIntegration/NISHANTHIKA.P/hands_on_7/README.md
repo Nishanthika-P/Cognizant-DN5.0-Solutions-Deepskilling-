@@ -75,26 +75,26 @@ None
 ## Task Checklist
 
 ### Task 1 — Set Up Alembic (Steps 92–97)
-- [x] `alembic init migrations` structure created
-- [x] `alembic.ini` configured with `sqlalchemy.url`
-- [x] `env.py` imports `Base` and sets `target_metadata`
-- [x] `001_initial_schema.py` contains `upgrade()` and `downgrade()`
-- [x] `alembic_version` table created on first `upgrade`
+-  `alembic init migrations` structure created
+-  `alembic.ini` configured with `sqlalchemy.url`
+-   `env.py` imports `Base` and sets `target_metadata`
+-  01 _initial_schema.py` contains `upgrade()` and `downgrade()`
+-  `alembic_version` table created on first `upgrade`
 
 ### Task 2 — Incremental Migrations (Steps 98–103)
-- [x] `is_active BOOLEAN DEFAULT TRUE` added to `Student` model
-- [x] Migration `002` generated — `upgrade()` adds column, `downgrade()` drops it
-- [x] `CourseSchedule` model added with FK → courses
-- [x] Migration `003` generated for the new table
-- [x] `alembic history verbose` shows 3 revisions
+-  `is_active BOOLEAN DEFAULT TRUE` added to `Student` model
+-  Migration `002` generated — `upgrade()` adds column, `downgrade()` drops it
+-  `CourseSchedule` model added with FK → courses
+-  Migration `003` generated for the new table
+-  `alembic history verbose` shows 3 revisions
 
 ### Task 3 — Rollback & Recovery (Steps 104–107)
-- [x] `alembic downgrade -1` drops `course_schedules`
-- [x] `alembic downgrade base` drops all tables
-- [x] `alembic upgrade head` restores full schema
-- [x] `alembic current` confirms head revision
+-  `alembic downgrade -1` drops `course_schedules`
+-  `alembic downgrade base` drops all tables
+-  `alembic upgrade head` restores full schema
+-  `alembic current` confirms head revision
 
 ### Bonus — Django Migrations (Step 108)
-- [x] `django_demo/models.py` mirrors the schema
-- [x] `django_migrations_demo.py` shows `makemigrations`, `migrate`, rollback
-- [x] `select_related` example avoids N+1 (links to Hands-On 6)
+-  `django_demo/models.py` mirrors the schema
+-  `django_migrations_demo.py` shows `makemigrations`, `migrate`, rollback
+-  `select_related` example avoids N+1 (links to Hands-On 6)
