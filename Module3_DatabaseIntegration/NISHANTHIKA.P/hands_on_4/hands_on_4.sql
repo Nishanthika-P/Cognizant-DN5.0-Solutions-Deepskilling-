@@ -1,7 +1,7 @@
 -- =============================================================
 -- Digital Nurture 5.0 | Module 3 | Hands-On 4
 -- Query Optimisation: Indexes, EXPLAIN & the N+1 Problem
--- Database: college_db (PostgreSQL)
+-- Database: college_db 
 -- =============================================================
 
 
