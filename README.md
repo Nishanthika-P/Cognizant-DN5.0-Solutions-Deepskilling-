@@ -131,19 +131,35 @@ This module covers end-to-end database integration for a **Student Course Regist
 
 **Key Concepts:** Alembic, Migration Versioning, upgrade/downgrade, Schema Evolution
 
----
+## 📁 File Structure
 
-
-## File Structure
-```
-Module3_DatabaseIntegration/
-└── NISHANTHIKA.P/
-    ├── hands_on_1.sql
-    ├── hands_on_2.sql
-    ├── hands_on_3.sql
-    ├── hands_on_4.sql
-    ├── hands_on_4_n_plus_one.py
-    ├── hands_on_5.mongodb.js
-    ├── hands_on_6.py
-    └── hands_on_7_notes.py
+Cognizant-DN5.0-Solutions-Deepskilling-/
+└── Module3_DatabaseIntegration/
+    └── NISHANTHIKA.P/
+        ├── hands_on_1/
+        │   └── hands_on_1.sql
+        ├── hands_on_2/
+        │   └── hands_on_2.sql
+        ├── hands_on_3/
+        │   └── hands_on_3.sql
+        ├── hands_on_4/
+        │   ├── hands_on_4.sql
+        │   └── hands_on_4_task3.py
+        ├── hands_on_5/
+        │   └── hands_on_5.mongodb.js
+        ├── hands_on_6/
+        │   ├── crud.py
+        │   └── models.py
+        └── hands_on_7/
+            ├── 001_initial_schema.py
+            ├── 002_add_is_active_to_students.py
+            ├── 003_add_course_schedule_table.py
+            ├── alembic.ini
+            ├── django_migrations_demo.py
+            ├── env.py
+            ├── models.py
+            ├── models_sqlalchemy.py
+            ├── run_migrations.py
+            ├── script.py.mako
+            └── README.md
 ```
