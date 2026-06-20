@@ -133,6 +133,7 @@ This module covers end-to-end database integration for a **Student Course Regist
 
 ## 📁 File Structure
 
+```
 Cognizant-DN5.0-Solutions-Deepskilling-/
 └── Module3_DatabaseIntegration/
     └── NISHANTHIKA.P/
