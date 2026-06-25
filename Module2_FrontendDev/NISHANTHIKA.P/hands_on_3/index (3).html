@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal — JavaScript DOM</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <span class="site-name">🎓 Student Portal</span>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Grades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="hero">
+      <h1>Welcome to the Student Portal</h1>
+      <p>Manage your courses and track your academic progress.</p>
+      <button type="button">Explore Courses</button>
+    </section>
+
+    <section id="courses">
+      <h2>Your Enrolled Courses</h2>
+
+      <!-- ── Controls ── -->
+      <div class="controls">
+        <!--
+          Task 3, Step 40: search input.
+          The 'input' event fires on every keystroke.
+        -->
+        <input
+          type="text"
+          id="search-courses"
+          placeholder="Search courses…"
+          aria-label="Search courses"
+        />
+
+        <!--
+          Task 3, Step 42: Sort button.
+          Sorts the displayed cards by credits descending.
+        -->
+        <button type="button" id="sort-btn">Sort by Credits ↓</button>
+      </div>
+
+      <!--
+        Task 2: The grid starts EMPTY.
+        JavaScript (app.js) creates and appends the
+        <article> cards dynamically from the courses array.
+      -->
+      <div class="course-grid" role="list" aria-label="Course list"></div>
+
+      <!--
+        Task 2, Step 39: Total credits paragraph.
+        app.js sets its textContent after rendering.
+      -->
+      <p id="total-credits" class="total-credits"></p>
+
+      <!--
+        Task 3, Step 43: Shows the clicked card's details.
+        Updated by the event delegation listener in app.js.
+      -->
+      <p id="selected-course" class="selected-course" aria-live="polite"></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Student Portal &mdash; Digital Nurture 5.0</p>
+  </footer>
+
+  <!--
+    type="module" is required for ES6 import/export to work.
+    It also automatically defers execution until the DOM is ready,
+    so we don't need a DOMContentLoaded listener.
+  -->
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>
