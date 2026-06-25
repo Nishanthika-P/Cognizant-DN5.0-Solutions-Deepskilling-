@@ -1,9 +1,6 @@
 /* ================================================
    HANDS-ON 2 — Flexbox, Grid & Responsive Design
    Student Portal: styles.css
-   MOBILE-FIRST: base styles target the smallest
-   screen; min-width media queries add complexity
-   for wider viewports.
    ================================================ */
 
 
@@ -20,9 +17,7 @@
 
 
 /* ------------------------------------------------
-   BASE (MOBILE-FIRST)
-   Default styles apply to all screen widths unless
-   overridden inside a min-width media query.
+   
    ------------------------------------------------ */
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -92,8 +87,8 @@ body {
   min-height: 40vh;
   display: flex;
   flex-direction: column;      /* stack children vertically */
-  align-items: center;         /* centre horizontally */
-  justify-content: center;     /* centre vertically */
+  align-items: center;         
+  justify-content: center;     
   text-align: center;
   padding: 3rem 1.25rem;
   background-color: #2b6cb0;
@@ -141,7 +136,7 @@ body {
   padding: 1rem 1.25rem;
   background-color: #1a365d;
   color: #ffffff;
-  flex-wrap: wrap;                /* items wrap on very small screens */
+  flex-wrap: wrap;                
   gap: 0.5rem;
 }
 
@@ -149,7 +144,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* flex: 1 makes each item grow equally to fill space */
+
   flex: 1;
   min-width: 80px;
 }
@@ -307,7 +302,7 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* More breathing room in hero at full desktop */
+  /*  full desktop */
   #hero {
     padding: 5rem 2rem;
     min-height: 50vh;
