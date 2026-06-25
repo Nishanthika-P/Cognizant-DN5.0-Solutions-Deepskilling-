@@ -3,13 +3,6 @@
    Student Portal: styles.css
    ================================================ */
 
-
-/* ------------------------------------------------
-   1. CSS RESET
-   box-sizing: border-box makes width calculations
-   intuitive — padding & border are included INSIDE
-   the declared width, not added on top of it.
-   ------------------------------------------------ */
 *,
 *::before,
 *::after {
@@ -21,8 +14,7 @@
 
 /* ------------------------------------------------
    2. BODY — Base typography & background
-   System font stack: uses the OS's own native font
-   so no extra download is needed.
+  
    ------------------------------------------------ */
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -34,9 +26,8 @@ body {
 
 /* ------------------------------------------------
    3. HEADER
-   display: flex + justify-content: space-between
-   pushes the site name to the left and the nav to
-   the right in one line.
+   display
+ 
    ------------------------------------------------ */
 header {
   display: flex;
@@ -57,7 +48,7 @@ header {
 /* ------------------------------------------------
    4. NAVIGATION
    Remove default list bullets and display items
-   inline (horizontally).
+   inline.
    ------------------------------------------------ */
 nav ul {
   list-style: none;          /* remove bullets */
@@ -79,7 +70,7 @@ nav a:hover {
 
 /* ------------------------------------------------
    5. HERO SECTION
-   Centre all child elements and add breathing room.
+  
    ------------------------------------------------ */
 #hero {
   text-align: center;
@@ -140,9 +131,7 @@ nav a:hover {
 
 /* ------------------------------------------------
    7. COURSE CARDS
-   The .course-card class is added to each <article>.
-   padding, border, border-radius, box-shadow give
-   the "card" visual effect.
+
    ------------------------------------------------ */
 .course-card {
   background-color: #ffffff;
