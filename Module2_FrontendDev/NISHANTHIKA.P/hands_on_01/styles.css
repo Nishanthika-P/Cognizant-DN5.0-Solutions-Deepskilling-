@@ -1,0 +1,193 @@
+/* ================================================
+   HANDS-ON 1 — CSS3 Foundations
+   Student Portal: styles.css
+   ================================================ */
+
+
+/* ------------------------------------------------
+   1. CSS RESET
+   box-sizing: border-box makes width calculations
+   intuitive — padding & border are included INSIDE
+   the declared width, not added on top of it.
+   ------------------------------------------------ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ------------------------------------------------
+   2. BODY — Base typography & background
+   System font stack: uses the OS's own native font
+   so no extra download is needed.
+   ------------------------------------------------ */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f4f8;
+  color: #1a202c;
+  line-height: 1.6;
+}
+
+
+/* ------------------------------------------------
+   3. HEADER
+   display: flex + justify-content: space-between
+   pushes the site name to the left and the nav to
+   the right in one line.
+   ------------------------------------------------ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1e3a5f;
+  color: #ffffff;
+}
+
+.site-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+
+/* ------------------------------------------------
+   4. NAVIGATION
+   Remove default list bullets and display items
+   inline (horizontally).
+   ------------------------------------------------ */
+nav ul {
+  list-style: none;          /* remove bullets */
+  display: flex;
+  gap: 1.5rem;               /* space between links */
+}
+
+nav a {
+  color: #cbd5e0;
+  text-decoration: none;     /* remove default underline */
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+
+/* ------------------------------------------------
+   5. HERO SECTION
+   Centre all child elements and add breathing room.
+   ------------------------------------------------ */
+#hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #2b6cb0;
+  color: #ffffff;
+}
+
+#hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  opacity: 0.9;
+}
+
+/* Button with padding, border, and a :hover pseudo-class */
+#hero button {
+  padding: 0.75rem 2rem;
+  background-color: #ffffff;
+  color: #2b6cb0;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#hero button:hover {
+  background-color: #2b6cb0;
+  color: #ffffff;
+}
+
+
+/* ------------------------------------------------
+   6. COURSES SECTION
+   ------------------------------------------------ */
+#courses {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#courses h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #1e3a5f;
+  border-bottom: 3px solid #2b6cb0;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+
+/* ------------------------------------------------
+   7. COURSE CARDS
+   The .course-card class is added to each <article>.
+   padding, border, border-radius, box-shadow give
+   the "card" visual effect.
+   ------------------------------------------------ */
+.course-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;       /* spacing between cards */
+  transition: box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+}
+
+.course-card h3 {
+  font-size: 1.1rem;
+  color: #1e3a5f;
+  margin-bottom: 0.5rem;
+}
+
+.course-card p {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0.75rem;
+}
+
+.credits {
+  display: inline-block;
+  background-color: #ebf4ff;
+  color: #2b6cb0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+}
+
+
+/* ------------------------------------------------
+   8. FOOTER
+   ------------------------------------------------ */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #1e3a5f;
+  color: #a0aec0;
+  font-size: 0.85rem;
+}
