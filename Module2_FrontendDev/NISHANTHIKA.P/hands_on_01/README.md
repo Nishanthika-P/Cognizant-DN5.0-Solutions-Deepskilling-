@@ -2,7 +2,6 @@
 
 **Program:** Digital Nurture 5.0 — Python Full Stack Engineer Track  
 **Module:** Module 2 — Frontend Development  
-**Level:** Beginner
 
 ---
 
@@ -18,9 +17,9 @@
 ## Files
 ```
 handson_01/
-├── index.html      → Semantic HTML5 page structure
-├── styles.css      → CSS3 styling and box model
-└── README.md       → This file
+├── index.html      
+├── styles.css      
+└── README.md       
 ```
 
 ---
@@ -53,17 +52,9 @@ handson_01/
 | 12 | Styled hero with `text-align: center`, generous padding, button with `:hover` pseudo-class |
 | 13 | Added `.course-card` class with `padding`, `border`, `border-radius: 8px`, and `box-shadow` |
 
-**Key concept — `box-sizing: border-box`:**  
-Padding and border are included INSIDE the declared width, so `width: 300px` stays exactly 300px regardless of padding.
-
 ---
 
-## How to Run
-1. Download or clone this folder
-2. Open `index.html` directly in Chrome or Firefox — no server needed
-3. Inspect element layout using `F12` → DevTools → Box Model panel
 
----
 
 ## Expected Output
 - A page with a visible dark-blue header and nav links
@@ -72,7 +63,3 @@ Padding and border are included INSIDE the declared width, so `width: 300px` sta
 - A dark footer
 
 ---
-
-## Validation
-- HTML validated at: https://validator.w3.org/
-- Result: ✅ Zero errors
