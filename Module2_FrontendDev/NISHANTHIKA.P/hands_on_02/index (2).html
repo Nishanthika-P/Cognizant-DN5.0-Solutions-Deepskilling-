@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal — Responsive Layout</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- =====================
+       HEADER — Flexbox
+       ===================== -->
+  <header class="site-header">
+    <span class="site-name">🎓 Student Portal</span>
+
+    <!-- On mobile this is shown as a text placeholder.
+         At ≥768px the real nav links appear via CSS. -->
+    <nav class="main-nav" aria-label="Main navigation">
+      <!-- Hamburger placeholder visible on mobile -->
+      <span class="hamburger-placeholder" aria-hidden="true">☰ Menu</span>
+
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Grades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- =====================
+         HERO — Flexbox column
+         ===================== -->
+    <section id="hero">
+      <h1>Welcome to the Student Portal</h1>
+      <p>
+        Access your courses, track your grades, and manage your academic
+        journey — all in one place.
+      </p>
+      <button type="button">Explore Courses</button>
+    </section>
+
+
+    <!-- =====================
+         STATS BAR — Flexbox row
+         Three equal stat items laid out with Flexbox.
+         ===================== -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-value">5</span>
+        <span class="stat-label">Courses Enrolled</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">3.8</span>
+        <span class="stat-label">GPA</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">6</span>
+        <span class="stat-label">Semester</span>
+      </div>
+    </div>
+
+
+    <!-- =====================
+         COURSES — CSS Grid
+         ===================== -->
+    <section id="courses">
+      <h2>Your Enrolled Courses</h2>
+
+      <!--
+        .course-grid uses CSS Grid.
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+        creates a SELF-RESPONSIVE grid — columns automatically
+        reflow as the viewport narrows without needing extra
+        media queries for column count.
+      -->
+      <div class="course-grid">
+
+        <article class="course-card">
+          <h3>Data Structures &amp; Algorithms</h3>
+          <p>Explore fundamental data structures: arrays, linked lists,
+             trees, and graphs. Master algorithmic complexity.</p>
+          <span class="credits">4 Credits</span>
+        </article>
+
+        <article class="course-card">
+          <h3>Web Development Fundamentals</h3>
+          <p>Build responsive websites with HTML5, CSS3, and JavaScript.
+             Covers accessibility and performance.</p>
+          <span class="credits">3 Credits</span>
+        </article>
+
+        <article class="course-card">
+          <h3>Database Management Systems</h3>
+          <p>Learn relational database design, SQL querying, and
+             normalisation. Introduction to NoSQL databases.</p>
+          <span class="credits">4 Credits</span>
+        </article>
+
+        <article class="course-card">
+          <h3>Operating Systems</h3>
+          <p>Study process management, memory allocation, file systems,
+             and concurrency in modern operating systems.</p>
+          <span class="credits">4 Credits</span>
+        </article>
+
+        <article class="course-card">
+          <h3>Computer Networks</h3>
+          <p>Understand the OSI model, TCP/IP stack, routing protocols,
+             and network security fundamentals.</p>
+          <span class="credits">3 Credits</span>
+        </article>
+
+      </div><!-- /.course-grid -->
+    </section>
+
+  </main>
+
+
+  <!-- =====================
+       FOOTER
+       ===================== -->
+  <footer>
+    <p>&copy; 2025 Student Portal &mdash; Digital Nurture 5.0</p>
+  </footer>
+
+</body>
+</html>

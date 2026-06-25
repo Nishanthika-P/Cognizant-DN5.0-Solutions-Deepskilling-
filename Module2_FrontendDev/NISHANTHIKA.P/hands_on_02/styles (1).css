@@ -1,0 +1,323 @@
+/* ================================================
+   HANDS-ON 2 — Flexbox, Grid & Responsive Design
+   Student Portal: styles.css
+   MOBILE-FIRST: base styles target the smallest
+   screen; min-width media queries add complexity
+   for wider viewports.
+   ================================================ */
+
+
+/* ------------------------------------------------
+   CSS RESET
+   ------------------------------------------------ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ------------------------------------------------
+   BASE (MOBILE-FIRST)
+   Default styles apply to all screen widths unless
+   overridden inside a min-width media query.
+   ------------------------------------------------ */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f4f8;
+  color: #1a202c;
+  line-height: 1.6;
+}
+
+
+/* ================================================
+   TASK 1 — FLEXBOX HEADER & NAV
+   ================================================ */
+
+/* Header: flex row, space-between pushes
+   site name left and nav right */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background-color: #1e3a5f;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-name {
+  /* clamp(min, preferred, max) — fluid typography:
+     scales between 1.1rem and 1.4rem as the viewport
+     widens, without abrupt jumps at breakpoints. */
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: bold;
+}
+
+/* --- Mobile nav: show hamburger, hide links --- */
+.hamburger-placeholder {
+  color: #cbd5e0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none;   /* hidden on mobile */
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+
+/* ================================================
+   HERO — Flexbox column layout
+   ================================================ */
+#hero {
+  /* min-height: 40vh ensures the hero always takes
+     at least 40% of the viewport height */
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;      /* stack children vertically */
+  align-items: center;         /* centre horizontally */
+  justify-content: center;     /* centre vertically */
+  text-align: center;
+  padding: 3rem 1.25rem;
+  background-color: #2b6cb0;
+  color: #ffffff;
+  gap: 1rem;
+}
+
+#hero h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.2;
+}
+
+#hero p {
+  max-width: 560px;
+  opacity: 0.9;
+  font-size: 1.05rem;
+}
+
+#hero button {
+  padding: 0.75rem 2rem;
+  background-color: #ffffff;
+  color: #2b6cb0;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#hero button:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+
+/* ================================================
+   TASK 1 (continued) — STATS BAR (Flexbox)
+   Three stat items with equal spacing.
+   ================================================ */
+.stats-bar {
+  display: flex;
+  justify-content: space-around;  /* equal spacing between items */
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background-color: #1a365d;
+  color: #ffffff;
+  flex-wrap: wrap;                /* items wrap on very small screens */
+  gap: 0.5rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* flex: 1 makes each item grow equally to fill space */
+  flex: 1;
+  min-width: 80px;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #63b3ed;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* ================================================
+   COURSES SECTION WRAPPER
+   ================================================ */
+#courses {
+  padding: 2.5rem 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#courses h2 {
+  font-size: 1.5rem;
+  color: #1e3a5f;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #2b6cb0;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+
+/* ================================================
+   TASK 2 — CSS GRID COURSE CARDS
+   ================================================
+
+   Mobile-first default: single column.
+
+   auto-fit + minmax(280px, 1fr):
+   - Each column is at least 280px wide
+   - Columns grow equally to fill remaining space
+   - The grid AUTOMATICALLY adds/removes columns as
+     the viewport width changes — no extra media
+     queries needed for column reflow.
+   ================================================ */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.course-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  /* align-self: stretch ensures all cards in a row
+     have the same height */
+  align-self: stretch;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  min-height: 180px;
+}
+
+.course-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.course-card h3 {
+  font-size: 1rem;
+  color: #1e3a5f;
+  margin-bottom: 0.5rem;
+}
+
+.course-card p {
+  font-size: 0.875rem;
+  color: #4a5568;
+  margin-bottom: 0.75rem;
+}
+
+.credits {
+  display: inline-block;
+  background-color: #ebf4ff;
+  color: #2b6cb0;
+  font-size: 0.78rem;
+  font-weight: bold;
+  padding: 0.2rem 0.55rem;
+  border-radius: 12px;
+}
+
+
+/* ================================================
+   FOOTER
+   ================================================ */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #1e3a5f;
+  color: #a0aec0;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+}
+
+
+/* ================================================
+   TASK 3 — RESPONSIVE MEDIA QUERIES
+   Mobile-first approach:
+   Start with single-column base styles (above),
+   then ENHANCE for wider viewports.
+   ================================================ */
+
+/* --- TABLET: ≥ 768px --- */
+@media (min-width: 768px) {
+
+  /* Show real nav links, hide hamburger placeholder */
+  .hamburger-placeholder {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;   /* show nav links at tablet+ */
+  }
+
+  /* Increase hero padding on larger screens */
+  #hero {
+    padding: 4rem 2rem;
+  }
+
+  /* At 768px the auto-fit grid already handles 2 columns
+     when cards are ≥280px, but we can explicitly enforce
+     2 columns here if needed: */
+  /* .course-grid { grid-template-columns: repeat(2, 1fr); } */
+
+  .stats-bar {
+    padding: 1.25rem 2rem;
+  }
+
+  #courses {
+    padding: 3rem 2rem;
+  }
+}
+
+
+/* --- DESKTOP: ≥ 1024px --- */
+@media (min-width: 1024px) {
+
+  /* Explicitly set 3 columns on large screens */
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* More breathing room in hero at full desktop */
+  #hero {
+    padding: 5rem 2rem;
+    min-height: 50vh;
+  }
+
+  .site-header {
+    padding: 1rem 3rem;
+  }
+
+  #courses {
+    padding: 3.5rem 2rem;
+  }
+}
