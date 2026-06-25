@@ -1,6 +1,5 @@
 /* ================================================
    HANDS-ON 3 — styles.css
-   Extends the styling from HO1 & HO2.
    ================================================ */
 
 *,
@@ -104,7 +103,7 @@ nav a:hover { color: #fff; }
 }
 #sort-btn:hover { background-color: #1e4e8c; }
 
-/* ── Course Grid (auto-fit responsive) ── */
+/* ── Course Grid  */
 .course-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
