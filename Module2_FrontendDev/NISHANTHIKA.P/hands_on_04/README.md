@@ -1,9 +1,5 @@
 # Hands-On 4: Async JavaScript, Fetch API & API Integration
 
-## How to run
-Just open `index.html` directly in a browser (Chrome or Firefox). No build step
-or npm install needed. Axios is loaded from a CDN in `index.html`.
-
 ## What's inside
 - `index.html` — page structure: Courses section, Notifications section,
   a Promise.all demo section, and an Axios demo section.
@@ -20,7 +16,3 @@ or npm install needed. Axios is loaded from a CDN in `index.html`.
     interceptor that logs every outgoing call, a `params` example, and a
     code comment listing three fetch vs. axios differences.
 
-## Notes
-- All network calls hit the public JSONPlaceholder API — no auth needed.
-- Open the browser console to see the logged output from Task 1 and the
-  Axios interceptor from Task 3.
