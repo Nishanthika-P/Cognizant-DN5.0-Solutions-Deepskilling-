@@ -16,7 +16,7 @@ function fetchUserWithThen(id) {
     });
 }
 
-// 46. Same function rewritten with async/await + try/catch
+// 46. Same function rewritten with async/await 
 async function fetchUser(id) {
   try {
     const response = await fetch(`${JSONPLACEHOLDER_BASE}/users/${id}`);
@@ -36,7 +36,7 @@ function fetchAllCourses() {
   });
 }
 
-// 49. Promise.all demo — fetch two users simultaneously
+// 49. fetch two users simultaneously
 async function fetchTwoUsersTogether() {
   const resultEl = document.getElementById("users-result");
   resultEl.textContent = "Loading users 1 and 2...";
@@ -101,8 +101,8 @@ async function loadNotifications(url) {
    TASK 3: Introduction to Axios
    ----------------------------------------------------------- */
 
-// 56. apiFetch rewritten using axios.get — Axios auto-parses JSON
-//     and rejects automatically on non-2xx responses.
+// 56. apiFetch rewritten using axios.get — 
+//     
 async function axiosFetch(url, config = {}) {
   const response = await axios.get(url, config);
   return response.data;
@@ -143,10 +143,6 @@ async function loadUserOnePosts() {
  *    out of the box; Fetch needs this to be hand-rolled.
  */
 
-/* -----------------------------------------------------------
-   Rendering helpers for course cards
-   ----------------------------------------------------------- */
-
 function renderCourses(list) {
   const grid = document.getElementById("course-grid");
   grid.innerHTML = "";
@@ -161,10 +157,6 @@ function renderCourses(list) {
     grid.appendChild(article);
   });
 }
-
-/* -----------------------------------------------------------
-   Wiring everything up on page load
-   ----------------------------------------------------------- */
 
 async function init() {
   const coursesStatus = document.getElementById("courses-status");
