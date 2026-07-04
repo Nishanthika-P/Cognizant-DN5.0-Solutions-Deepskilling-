@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal | Async JS & Fetch API</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="site-title">Student Portal</div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#notifications">Notifications</a></li>
+        <li><a href="#profile">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="courses">
+      <h2>Courses</h2>
+      <p id="courses-status" role="status" aria-live="polite">Loading courses...</p>
+      <div class="course-grid" id="course-grid"></div>
+    </section>
+
+    <section id="notifications">
+      <h2>Notifications</h2>
+      <div class="section-controls">
+        <button id="load-notifications-btn">Load Notifications</button>
+        <button id="load-bad-url-btn">Simulate Error (bad URL)</button>
+      </div>
+      <p id="notifications-status" role="status" aria-live="polite"></p>
+      <div id="notifications-list" class="notifications-list"></div>
+      <button id="retry-btn" class="retry-btn hidden">Retry</button>
+    </section>
+
+    <section id="users-demo">
+      <h2>Promise.all Demo</h2>
+      <button id="load-users-btn">Load Users 1 &amp; 2 Together</button>
+      <p id="users-result"></p>
+    </section>
+
+    <section id="axios-demo">
+      <h2>Axios Demo</h2>
+      <button id="axios-posts-btn">Load User 1's Posts (Axios)</button>
+      <ul id="axios-result" class="notifications-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Portal. Digital Nurture 5.0.</p>
+  </footer>
+
+  <!-- Axios via CDN, used only in Task 3 -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
