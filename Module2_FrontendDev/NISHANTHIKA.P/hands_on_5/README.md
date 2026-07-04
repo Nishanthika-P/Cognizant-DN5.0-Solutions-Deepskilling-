@@ -1,12 +1,5 @@
 # Hands-On 5: React Fundamentals — Components, Props, State & Hooks
 
-## How to run
-```
-npm install
-npm run dev
-```
-Then open the printed local URL (typically http://localhost:5173).
-
 ## What's inside
 - `src/components/Header.jsx` — receives `siteName` and `enrolledCount` as props.
 - `src/components/Footer.jsx` — simple copyright line.
@@ -26,8 +19,3 @@ Then open the printed local URL (typically http://localhost:5173).
     `loading` and `error` state. A second `useEffect` logs "Courses updated"
     whenever `courses` changes — see the code comment explaining why the
     dependency array matters.
-
-## Notes
-- Each list item uses `course.id` as its `key`, not the array index.
-- No CSS framework is used — plain CSS lives in `src/App.css`. No emojis
-  are used anywhere in the UI text.
