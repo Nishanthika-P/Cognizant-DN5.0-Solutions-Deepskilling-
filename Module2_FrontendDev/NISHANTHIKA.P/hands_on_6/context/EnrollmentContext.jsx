@@ -1,8 +1,4 @@
-// Task 2 solution: global state shared through Context API, before it
-// gets refactored to Redux Toolkit in Task 3. Kept here for reference
-// and grading — the live app (App.jsx) uses the Redux store instead.
-// To try this version, wrap <App /> in <EnrollmentProvider> inside
-// main.jsx and swap useSelector/useDispatch calls for useContext.
+// Task 2 solution: global state shared through Context API 
 
 import { createContext, useContext, useState } from "react";
 
