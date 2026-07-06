@@ -3,13 +3,6 @@
 This project extends Hands-On 5 with React Router, Context API, and Redux
 Toolkit.
 
-## How to run
-```
-npm install
-npm run dev
-```
-
-## What's inside
 - **Task 1 — React Router**: `src/App.jsx` defines routes for `/`,
   `/courses`, `/courses/:courseId`, and `/profile`. `main.jsx` wraps the
   app in `<BrowserRouter>`. `Header.jsx` uses `<Link>` (with
@@ -31,13 +24,4 @@ npm run dev
   directly. Install the Redux DevTools browser extension to watch the
   `enroll` / `unenroll` actions and state diffs live.
 
-## Pages
-- `HomePage.jsx` — hero section with a link into `/courses`.
-- `CoursesPage.jsx` — fetches courses from JSONPlaceholder (falls back to
-  local data on failure), supports search, and dispatches `enroll`.
-- `CourseDetailPage.jsx` — loads a single course by id from the URL param.
-- `ProfilePage.jsx` — a local profile form plus the list of enrolled
-  courses read from Redux, each with a Remove button.
 
-## Notes
-- No emojis are used anywhere in the UI text or components.
