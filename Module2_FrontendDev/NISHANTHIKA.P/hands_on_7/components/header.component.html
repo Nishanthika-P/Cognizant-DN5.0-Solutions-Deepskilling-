@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="site-title">{{ siteName }}</div>
+  <nav aria-label="Main navigation">
+    <a
+      routerLink="/"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Courses
+    </a>
+    <a routerLink="/profile" routerLinkActive="active-link">Profile</a>
+  </nav>
+</header>

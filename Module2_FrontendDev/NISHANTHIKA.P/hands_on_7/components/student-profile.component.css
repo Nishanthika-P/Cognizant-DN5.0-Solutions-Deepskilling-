@@ -1,0 +1,23 @@
+.student-profile form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 320px;
+}
+
+.student-profile label {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+.student-profile button {
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+.success-message {
+  margin-top: 1rem;
+  color: #0f6e56;
+  font-weight: bold;
+}

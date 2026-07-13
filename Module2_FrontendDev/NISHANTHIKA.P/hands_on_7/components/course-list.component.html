@@ -1,0 +1,28 @@
+<section class="course-list">
+  <h2>Courses</h2>
+
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search courses..."
+    aria-label="Search courses"
+  />
+
+  <p *ngIf="loading" role="status" aria-live="polite">Loading courses...</p>
+  <p *ngIf="error" class="error-message" role="status" aria-live="polite">
+    {{ error }}
+  </p>
+
+  <div class="course-grid" *ngIf="!loading">
+    <app-course-card
+      *ngFor="let course of filteredCourses; trackBy: trackById"
+      [name]="course.name"
+      [code]="course.code"
+      [credits]="course.credits"
+      [grade]="course.grade"
+    >
+    </app-course-card>
+  </div>
+
+  <p *ngIf="!loading && filteredCourses.length === 0">No courses found.</p>
+</section>

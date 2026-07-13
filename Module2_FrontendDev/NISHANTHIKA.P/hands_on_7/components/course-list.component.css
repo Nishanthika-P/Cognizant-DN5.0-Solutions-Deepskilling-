@@ -1,0 +1,12 @@
+.course-list input {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0.75rem 0 1rem;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}

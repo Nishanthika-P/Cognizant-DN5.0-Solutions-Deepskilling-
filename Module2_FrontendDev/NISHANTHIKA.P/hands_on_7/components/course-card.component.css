@@ -1,0 +1,13 @@
+.course-card {
+  background: #ffffff;
+  border: 1px solid #dfe3ea;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.grade {
+  margin-top: 0.4rem;
+  color: #4b5563;
+  font-size: 0.875rem;
+}
