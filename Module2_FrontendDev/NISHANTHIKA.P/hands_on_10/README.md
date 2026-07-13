@@ -1,11 +1,18 @@
 # Hands-On 10: API Integration & Advanced State Management
 
-This exercise lets you pick one framework to implement. **React is the implementation here.** The NgRx and Pinia sections below
+This exercise lets you pick one framework to implement. **React (Redux
+Toolkit) is the implementation here.** The NgRx and Pinia sections below
 are read-and-understand concept summaries, as the exercise allows.
 
+## How to run
+```
+npm install
+npm run dev
+```
+
+## What's inside
 
 ### Task 1 — Centralised API service layer
-
 - `src/api/apiClient.js` — a single configured Axios instance with a
   `baseURL`, default headers, and a 5s timeout.
 - `src/api/courseApi.js` — `getAllCourses()`, `getCourseById(id)`, and
@@ -16,7 +23,6 @@ are read-and-understand concept summaries, as the exercise allows.
   a plain error message — never raw HTTP status codes.
 
 ### Task 2 — Redux Toolkit async thunks
-
 - `src/store/coursesSlice.js` defines `fetchAllCourses` with
   `createAsyncThunk`, and handles `pending` / `fulfilled` / `rejected` in
   `extraReducers` (setting `loading` and `error` accordingly).
@@ -28,7 +34,6 @@ are read-and-understand concept summaries, as the exercise allows.
   box + Retry button will appear.
 
 ### Task 3 — Global error handling + framework comparison
-
 - `src/components/ErrorBoundary.jsx` is a class component wrapping the
   whole app in `main.jsx`. It catches render-time errors anywhere below
   it and shows a fallback UI with a Reload button instead of a blank
@@ -57,3 +62,7 @@ reactivity).
 | Learning curve | Moderate — need to understand actions/reducers/thunks conceptually | Steepest — RxJS observables plus the full NgRx vocabulary | Gentlest — feels like plain reactive JavaScript |
 | Built-in tooling | Redux DevTools (separate install), Immer built into RTK | Angular DevTools + Redux DevTools extension, strong typing via Angular CLI | Vue DevTools with a first-class Pinia tab out of the box |
 | Best fit | Teams wanting predictable, inspectable state without hand-rolling Redux | Large enterprise Angular apps already committed to RxJS everywhere | Small-to-mid apps wanting global state with minimal ceremony |
+
+## Notes
+- No emojis are used anywhere in the UI text.
+- Build-tested with `npm install && npm run build` — compiles cleanly.

@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f6f8;
+  color: #1f2430;
+  line-height: 1.5;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #1f2b45;
+  color: #ffffff;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.site-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-header nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.site-header nav a:hover {
+  text-decoration: underline;
+}
+
+.enrolled-badge {
+  background-color: #33456d;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero button {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #1f2b45;
+  border-radius: 6px;
+  background-color: #1f2b45;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #33456d;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #dfe3ea;
+  border-radius: 6px;
+}
+
+.courses-section input {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0.75rem 0 1rem;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.course-card {
+  background: #ffffff;
+  border: 1px solid #dfe3ea;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.course-card button {
+  margin-top: 0.5rem;
+}
+
+.error-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  color: #b3261e;
+  font-weight: bold;
+}
+
+.profile-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 320px;
+  margin-bottom: 1.5rem;
+}
+
+.enrolled-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 480px;
+}
+
+.enrolled-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #dfe3ea;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+.enrolled-list button {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid #b3261e;
+  background-color: #ffffff;
+  color: #b3261e;
+}
+
+.enrolled-list button:hover {
+  background-color: #b3261e;
+  color: #ffffff;
+}
+
+.total-credits {
+  margin-top: 0.75rem;
+  font-weight: bold;
+}
+
+.error-boundary-fallback {
+  max-width: 480px;
+  margin: 4rem auto;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #dfe3ea;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.error-boundary-fallback button {
+  margin-top: 1rem;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
