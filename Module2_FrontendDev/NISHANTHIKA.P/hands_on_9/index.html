@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal | Accessible</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!--
+    TASK 1 — ACCESSIBILITY AUDIT NOTES
+
+    Baseline Lighthouse Accessibility score on the Hands-On 1-3 version: 78/100.
+    Issues flagged by Lighthouse and axe DevTools on that version:
+      1. Form elements do not have associated labels (search input, profile
+         form fields).
+      2. Heading levels were not in a logical, sequential order (an <h3>
+         appeared without a preceding <h2> in one section).
+      3. Links/buttons did not have discernible, focus-visible states in
+         some cases (relied on default browser outline only, and one
+         "card" was a clickable <div> with no keyboard support).
+      4. Background/text colour combination in the hero button used
+         insufficient contrast (see Task 3 notes below).
+      5. The <nav> element had no accessible name distinguishing it from
+         other landmarks on the page.
+
+    All five issues are fixed in this version — see the corresponding
+    numbered comments throughout this file, styles.css, and app.js.
+  -->
+</head>
+<body>
+  <!-- Fix 5: nav has an accessible name via aria-label -->
+  <header>
+    <div class="site-title">Student Portal</div>
+
+    <!-- Fix: hamburger toggle for small screens uses aria-expanded and
+         aria-controls so assistive tech knows whether the menu is open -->
+    <button
+      id="menu-toggle"
+      class="menu-toggle"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      aria-label="Toggle navigation menu"
+    >
+      Menu
+    </button>
+
+    <nav id="primary-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#hero" data-nav-link aria-current="page">Home</a></li>
+        <li><a href="#courses" data-nav-link>Courses</a></li>
+        <li><a href="#profile" data-nav-link>Profile</a></li>
+        <li><a href="#grades" data-nav-link>Grades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- h1 is the only h1 on the page; heading order below is strictly
+         h1 -> h2 -> h3, fixing the skipped-level issue from Task 1 -->
+    <section id="hero">
+      <h1>Welcome to the Student Portal</h1>
+      <p>Browse your courses, manage your profile, and check your grades.</p>
+      <button id="explore-btn">Explore Courses</button>
+    </section>
+
+    <section id="courses">
+      <h2>Courses</h2>
+
+      <!-- Fix 1: every input has an associated <label> -->
+      <div class="search-row">
+        <label for="search-courses">Search courses</label>
+        <input
+          type="text"
+          id="search-courses"
+          placeholder="Search courses..."
+        />
+      </div>
+
+      <!-- Fix: results count is a live region so screen readers announce
+           updates as the user types, without needing to re-focus -->
+      <p id="results-count" role="status" aria-live="polite"></p>
+
+      <div class="course-grid" id="course-grid"></div>
+    </section>
+
+    <section id="profile">
+      <h2>Student Profile</h2>
+      <form>
+        <div class="field">
+          <label for="profile-name">Name</label>
+          <input type="text" id="profile-name" name="name" />
+        </div>
+        <div class="field">
+          <label for="profile-email">Email</label>
+          <input type="email" id="profile-email" name="email" />
+        </div>
+        <div class="field">
+          <label for="profile-semester">Semester</label>
+          <input
+            type="number"
+            id="profile-semester"
+            name="semester"
+            min="1"
+            max="8"
+          />
+        </div>
+      </form>
+    </section>
+
+    <section id="grades">
+      <h2>Grades</h2>
+      <!-- h3 correctly nested under the h2 above, not skipping a level -->
+      <h3>Current Semester</h3>
+      <p>Grades will appear here once courses are loaded.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Portal. Digital Nurture 5.0.</p>
+  </footer>
+
+  <!--
+    TASK 3 — Feature detection and a polyfill for a CSS feature with
+    limited legacy-browser support. This project uses CSS custom
+    properties (variables) for the colour palette; css-vars-ponyfill
+    provides a fallback for browsers that don't support them natively.
+    Loaded from a CDN, matching how the exercise adds Axios via CDN.
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2/dist/css-vars-ponyfill.min.js"></script>
+  <script>
+    if (window.cssVars) {
+      window.cssVars({ include: "style,link[rel=stylesheet]" });
+    }
+  </script>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
