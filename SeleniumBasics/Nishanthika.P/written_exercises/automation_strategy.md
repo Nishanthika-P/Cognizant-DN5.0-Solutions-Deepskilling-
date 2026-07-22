@@ -1,6 +1,5 @@
 # Hands-On 3: Test Automation Process, Lifecycle & Framework Types
 
-**Track:** Digital Nurture 5.0 — Python Full Stack Engineer
 **System Under Test:** Course Management API / Frontend
 
 ---
