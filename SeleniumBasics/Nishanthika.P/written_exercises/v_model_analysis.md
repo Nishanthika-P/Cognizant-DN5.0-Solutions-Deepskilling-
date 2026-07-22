@@ -1,6 +1,5 @@
 # Hands-On 2: SDLC vs TDLC — V-Model & Agile QA Integration
 
-**Track:** Digital Nurture 5.0 — Python Full Stack Engineer
 **System Under Test:** Course Management API
 
 ---
