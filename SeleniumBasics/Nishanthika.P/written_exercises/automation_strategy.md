@@ -12,7 +12,7 @@ Applied to: *"Test that `POST /api/courses/` returns 201 with the correct course
 
 | Criterion | Explanation | Applied to this test case |
 |---|---|---|
-| **1. Repeatability** | Is the test run often (regression, every build)? | Yes — this is a core happy-path test that will be run on every commit/build. Strong candidate. |
+| **1. Repeatability** | Is the test run often (regression)? | Yes — this is a core happy-path test that will be run on every commit/build. Strong candidate. |
 | **2. Stability of the feature** | Does the feature under test change frequently? | The `POST /api/courses/` contract is stable and unlikely to change often once defined — good for automation, since automated tests need a stable target. |
 | **3. High business risk** | Would a failure here cause significant business impact? | Yes — course creation is a core function of the system; failures here block all downstream activity (enrollment, etc.). |
 | **4. Data-driven nature** | Can the test be run with multiple input combinations easily? | Yes — the test can easily be parameterised with multiple valid course payloads. |
