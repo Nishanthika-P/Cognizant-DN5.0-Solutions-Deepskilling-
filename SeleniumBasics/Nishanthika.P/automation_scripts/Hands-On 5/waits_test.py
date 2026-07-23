@@ -43,10 +43,9 @@ def test_sleep_vs_explicit_wait_timing_comparison():
     time.sleep(3) is bad because it ALWAYS waits the full 3 seconds, even
     if the element appeared after 200ms (wasting time on fast machines/
     fast networks), and it FAILS unpredictably if the element takes longer
-    than 3 seconds to appear on a slow machine/network (no automatic
-    retry). An explicit wait polls repeatedly up to a maximum timeout and
+    than 3 seconds to appear on a slow machine/network. An explicit wait polls repeatedly up to a maximum timeout and
     returns AS SOON AS the condition is met - faster on fast machines,
-    and more reliable (higher timeout ceiling) on slow ones.
+    and more reliable on slow ones.
     """
     driver = build_driver(headless=True)
     try:
@@ -87,7 +86,7 @@ def test_element_to_be_clickable():
     disabled or covered by another element (e.g., a loading overlay).
 
     element_to_be_clickable: confirms the element is visible AND enabled
-    AND not obscured by anything else on top of it - i.e., a real click
+    AND not obscured by anything else on top of it , a real click
     would actually succeed. Always prefer this immediately before a
     .click() call.
     """
@@ -107,7 +106,7 @@ def test_element_to_be_clickable():
 
 
 def test_fluent_wait_for_dynamic_table_row():
-    """Step 39: FluentWait - poll every 500ms, timeout 10s, ignore NoSuchElementException."""
+    """Step 39: FluentWait."""
     driver = build_driver(headless=True)
     try:
         driver.get(
