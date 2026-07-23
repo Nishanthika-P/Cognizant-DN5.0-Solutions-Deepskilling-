@@ -1,8 +1,5 @@
 """
 Hands-On 6 - Task 2 - conftest.py
-Carries forward the `driver` fixture from Task 1, and adds:
-  - Step 46: pytest_runtest_makereport hook -> screenshot on test failure
-  - Step 48: session-scoped base_url fixture
 """
 
 import pytest
