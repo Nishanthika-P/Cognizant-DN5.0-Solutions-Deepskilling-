@@ -4,7 +4,6 @@ Hands-On 5 - Task 1: Locator Strategies - From Simple to Robust
 Target: Simple Form Demo page and Checkbox Demo page on
 https://www.lambdatest.com/selenium-playground/
 
-Note on the target markup (inspected via DevTools per Step 32):
 The message input on the Simple Form Demo page has:
     <input type="text" class="form-control" id="user-message" name="message">
 """
@@ -13,8 +12,8 @@ import sys
 import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "hands_on_4"))
-from setup_test import build_driver  # noqa: E402
-from selenium.webdriver.common.by import By  # noqa: E402
+from setup_test import build_driver  
+from selenium.webdriver.common.by import By  
 
 SIMPLE_FORM_URL = "https://www.lambdatest.com/selenium-playground/simple-form-demo"
 CHECKBOX_URL = "https://www.lambdatest.com/selenium-playground/checkbox-demo"
