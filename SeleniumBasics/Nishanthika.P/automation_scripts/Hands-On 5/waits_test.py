@@ -70,9 +70,7 @@ def test_sleep_vs_explicit_wait_timing_comparison():
         wait_duration = time.time() - start
         print(f"Explicit wait version took: {wait_duration:.2f}s")
 
-        # On a fast local page like this, the explicit wait version should
-        # typically be faster (or at worst equal) since it doesn't force a
-        # fixed 3-second delay.
+        # On a fast local page like this, the explicit wait version should  typically be faster (or at worst equal) since it doesn't force a fixed 3-second delay.
     finally:
         driver.quit()
 
