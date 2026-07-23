@@ -1,6 +1,5 @@
 """
 Hands-On 6 - Task 1: Organise Scripts into pytest Tests
-Steps 40, 42, 43, 44
 
 Run with:
     pytest test_playground.py -v
