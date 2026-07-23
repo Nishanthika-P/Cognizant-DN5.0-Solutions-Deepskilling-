@@ -7,8 +7,6 @@ cd coursemanager
 python manage.py runserver
 ```
 
-## Verify
-Visit http://127.0.0.1:8000/api/hello/  -> "Course Management API is running"
 
 ## Files
 - `notes.py` — Task 1 write-up (request-response cycle, middleware, WSGI vs ASGI, MVC->MVT)
