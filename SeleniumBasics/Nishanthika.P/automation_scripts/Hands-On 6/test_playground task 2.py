@@ -1,11 +1,5 @@
 """
 Hands-On 6 - Task 2: Parameterisation, Reporting and Screenshot on Failure
-Steps 45, 47, 48, 49
-
-This file carries forward test_checkbox_demo from Task 1 unchanged, and
-evolves test_simple_form_submission into a parametrized version. It also
-uses the new base_url fixture, and adds a dropdown test and an
-intentional-failure test to demonstrate the screenshot-on-failure hook.
 
 Run with:
     pytest test_playground.py -v --html=report.html --self-contained-html
@@ -33,8 +27,7 @@ def test_simple_form_submission(driver, base_url, message):
     assert displayed_message.text == message
 
 
-# Carried over from Task 1, now using the base_url fixture instead of a
-# hardcoded URL string (Step 48).
+# Carried over from Task 1, now using the base_url fixture instead of a hardcoded URL string (Step 48).
 def test_checkbox_demo(driver, base_url):
     driver.get(base_url + "checkbox-demo/")
 
@@ -59,7 +52,6 @@ def test_dropdown_selection(driver, base_url):
 
 # Included only to demonstrate that the pytest_runtest_makereport hook in
 # conftest.py correctly captures a screenshot on failure (Step 46).
-# Remove or skip this in a real regression suite.
 def test_intentional_failure_for_screenshot_demo(driver, base_url):
     driver.get(base_url)
     assert driver.title == "This Title Does Not Exist"
