@@ -9,7 +9,7 @@ BASE_URL = "https://www.lambdatest.com/selenium-playground/"
 
 
 def test_navigation_and_back():
-    """Step 28: navigate to Simple Form Demo, assert URL, go back."""
+    """Step 28: navigate to Simple Form Demo."""
     driver = build_driver(headless=True)
     try:
         driver.get(BASE_URL)
