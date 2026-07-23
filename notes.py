@@ -1,0 +1,74 @@
+"""
+notes.py
+Digital Nurture 5.0 - Hands-On 1, Task 1
+Request-Response Cycle, Middleware, WSGI vs ASGI, MVC -> MVT
+"""
+
+# ---------------------------------------------------------------
+# 1. Journey of a GET /api/courses/ request through Django
+# ---------------------------------------------------------------
+# Browser sends HTTP GET /api/courses/
+#   -> Web server (e.g. Gunicorn/Nginx) hands the request to Django via WSGI/ASGI
+#   -> Django's URL Resolver (urls.py) matches the path "/api/courses/"
+#      against the URL patterns and finds the matching View
+#   -> Before the view runs, the request passes through Middleware
+#      (e.g. SecurityMiddleware, AuthenticationMiddleware)
+#   -> The View (CourseListView / CourseViewSet) runs the business logic
+#   -> The View talks to the Model layer, which builds a SQL query via
+#      the Django ORM and hits the Database
+#   -> The Database returns rows -> the ORM converts them into Model
+#      instances (QuerySet)
+#   -> The View serializes the QuerySet into JSON (via a Serializer)
+#      and wraps it in an HttpResponse / DRF Response
+#   -> The Response passes back out through Middleware (response side)
+#   -> Django sends the HTTP response back to the browser/client
+
+# ---------------------------------------------------------------
+# 2. Middleware
+# ---------------------------------------------------------------
+# Middleware sits BETWEEN the web server and the View - it can process
+# the request on the way IN (before the view) and the response on the
+# way OUT (after the view). It runs for every request, in the order
+# listed in settings.MIDDLEWARE.
+#
+# Two built-in Django middleware classes:
+#   - django.middleware.security.SecurityMiddleware:
+#       Adds security-related HTTP headers (e.g. HSTS, X-Content-Type-Options)
+#       and can redirect HTTP -> HTTPS.
+#   - django.contrib.auth.middleware.AuthenticationMiddleware:
+#       Attaches the currently logged-in user (or AnonymousUser) to
+#       request.user, based on the session, for every incoming request.
+
+# ---------------------------------------------------------------
+# 3. WSGI vs ASGI
+# ---------------------------------------------------------------
+# WSGI (Web Server Gateway Interface):
+#   - Synchronous interface between Python web apps and web servers.
+#   - Handles one request at a time per worker thread/process.
+#   - Django uses WSGI by default (wsgi.py is generated on startproject).
+#
+# ASGI (Asynchronous Server Gateway Interface):
+#   - Successor to WSGI; supports async/await, WebSockets, long-lived
+#     connections, and concurrent request handling in a single process.
+#   - Switch to ASGI when you need: WebSockets, Server-Sent Events,
+#     background async tasks, or high-concurrency I/O-bound workloads
+#     (e.g. chat apps, real-time notifications).
+
+# ---------------------------------------------------------------
+# 4. MVC -> Django's MVT
+# ---------------------------------------------------------------
+# MVC (Model-View-Controller):
+#   Model      -> manages data and business rules
+#   View       -> presentation layer, what the user sees
+#   Controller -> handles input, talks to Model, chooses a View
+#
+# Django's MVT (Model-View-Template):
+#   Model    -> same as MVC's Model (courses/models.py)
+#   View     -> Django's "View" plays the role of MVC's CONTROLLER
+#               (courses/views.py - receives request, applies logic)
+#   Template -> plays the role of MVC's VIEW (the HTML/JSON presentation)
+#
+# Mapping:
+#   MVC Model      == Django Model
+#   MVC View       == Django Template
+#   MVC Controller == Django View
