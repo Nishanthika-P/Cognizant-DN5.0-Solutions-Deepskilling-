@@ -1,7 +1,6 @@
 """
 notes.py
 Digital Nurture 5.0 - Hands-On 1, Task 1
-Request-Response Cycle, Middleware, WSGI vs ASGI, MVC -> MVT
 """
 
 # ---------------------------------------------------------------
