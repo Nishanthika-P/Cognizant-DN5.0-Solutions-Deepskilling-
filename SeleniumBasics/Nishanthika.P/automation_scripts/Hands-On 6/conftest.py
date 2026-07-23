@@ -28,6 +28,6 @@ def driver():
     drv = webdriver.Chrome(service=service, options=options)
     drv.implicitly_wait(5)
 
-    yield drv  # --- setup above, test runs here ---
+    yield drv  #  test runs here
 
-    drv.quit()  # --- teardown after yield ---
+    drv.quit()  # teardown after yield 
