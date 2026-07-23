@@ -1,6 +1,5 @@
 """
 Hands-On 7 - tests/conftest.py
-Same fixtures as Hands-On 6, reused here for the POM-based suite.
 """
 
 import pytest
