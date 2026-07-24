@@ -29,4 +29,4 @@ python manage.py runserver
 ## Expected Outcome
 `showmigrations` shows all applied. Admin lists courses with name/code/credits/department,
 search and department filter work. Re-enrolling the same student in the same course raises
-a validation error (unique_together).
+a validation error.
