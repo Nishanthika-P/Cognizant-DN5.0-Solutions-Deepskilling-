@@ -9,28 +9,7 @@
 | Auth Service (future) | Registration, login, token validation          | `/api/v1/auth/*`                             | (shares or owns `users`) |
 | Notification Service (future) | Email confirmations                    | internal only (no public endpoints)          | none - stateless         |
 
-> Only Course Service and Student Service are implemented here per the
-> hands-on's "start with 2 services" guidance (Task 1, step 99). Auth and
-> Notification are documented as the natural next split, building on the
-> JWT auth from Hands-On 9 and the background-task email from Hands-On 7.
 
-## Setup — run all three apps in separate terminals
-```bash
-# Terminal 1
-cd course_service
-pip install -r requirements.txt
-python app.py            # http://127.0.0.1:5001
-
-# Terminal 2
-cd student_service
-pip install -r requirements.txt
-python app.py            # http://127.0.0.1:5002
-
-# Terminal 3
-cd gateway
-pip install -r requirements.txt
-python app.py            # http://127.0.0.1:5000
-```
 
 ## Test the full flow through the gateway
 ```bash
