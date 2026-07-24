@@ -1,8 +1,6 @@
 """
 orm_queries.py
 Hands-On 2, Task 2: Django ORM queries.
-Run with:  python manage.py shell < ../orm_queries.py
-(from inside the coursemanager/ directory)
 """
 from courses.models import Department, Course, Student, Enrollment
 from django.db.models import Count, F
@@ -25,7 +23,7 @@ for i, (fn, ln) in enumerate([
         department=cs if i % 2 else ee, enrollment_year=2023,
     )
 
-# 17. Filter courses in a specific department (double-underscore lookup)
+# 17. Filter courses in a specific department 
 cs_courses = Course.objects.filter(department__name='Computer Science')
 print('CS courses:', list(cs_courses))
 
