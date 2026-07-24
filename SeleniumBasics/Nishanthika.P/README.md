@@ -15,7 +15,7 @@ This repository contains solutions for all 7 Hands-On exercises covering QA fund
 | 3 | Test Automation Process, Lifecycle & Framework Types | Written | Intermediate | `automation_strategy.md` |
 | 4 | Selenium WebDriver Setup, Browser Drivers & Basic Commands | Code | Intermediate | `hands_on_4/` |
 | 5 | Locators — ID, Name, XPath, CSS & Explicit Waits | Code | Intermediate | `hands_on_5/` |
-| 6 | Running Selenium Tests with pytest — Fixtures & Reporting | Code | Advanced | `hands_on_6_task1/`, `hands_on_6_task2/` |
+| 6 | Running Selenium Tests with pytest — Fixtures & Reporting | Code | Advanced | `hands_on_6`,  |
 | 7 | Page Object Model (POM) | Code | Advanced | `hands_on_7/` |
 
 ---
