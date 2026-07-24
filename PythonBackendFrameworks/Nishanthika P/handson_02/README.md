@@ -9,7 +9,7 @@ python manage.py migrate
 python manage.py dbshell   # confirm tables exist, then .quit / .exit
 ```
 
-## Task 2: run the ORM queries script
+## Task 2: run the ORM queries script. 
 ```bash
 python manage.py shell < ../orm_queries.py
 ```
